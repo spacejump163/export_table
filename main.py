@@ -186,8 +186,9 @@ class App(object):
 
     def register_converters(self):
         from plugins.model import fun
-        self.converters["model"] = fun
-        self.converters["str"] = lambda x:x
+        self.converters[u"model"] = fun
+        self.converters[u"str"] = lambda x: x
+        self.converters[u"comment"] = lambda x: None
 
 
 class PyExporter(object):
