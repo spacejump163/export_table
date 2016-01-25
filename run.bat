@@ -1,2 +1,2 @@
-python main.py -i test_input -o test_output -r rules -c
+python main.py -i test_input -r rules -c -o test_output0 test_output1
 pause

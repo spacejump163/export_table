@@ -4,6 +4,7 @@ import imp
 from collections import namedtuple
 import argparse
 import re
+import shutil
 
 import logging
 
@@ -24,6 +25,8 @@ tbool = type(True)
 tunicode = type(u"")
 tstr = type("")
 
+TMP_DIR_NAME = os.path.abspath("./tmp")
+
 class App(object):
     def __init__(self, input_dir, output_dir, rule_dir, use_comment, verbose):
         self.input_dir = input_dir
@@ -42,7 +45,18 @@ class App(object):
         }
         self.register_converters()
 
+    def ensure_tmp_dir(self):
+        shutil.rmtree(TMP_DIR_NAME, True)
+        os.makedirs(TMP_DIR_NAME)
+        self.tmp_dir = os.path.abspath(TMP_DIR_NAME)
+
+
     def run(self):
+        self.ensure_tmp_dir()
+        self.phase_generate()
+        self.phase_copy()
+
+    def phase_generate(self):
         l = os.listdir(self.input_dir)
         for file_name in l:
             # check if this is a xls file
@@ -62,7 +76,7 @@ class App(object):
                 logger.info("rule file not found")
             #print self.input_dir + file_name, plugin
             data, column_names = self.parse_table(file_path, rule_module)
-            output_file_path = os.path.join(self.output_dir, n) + ".py"
+            output_file_path = os.path.join(TMP_DIR_NAME, n) + ".py"
 
             emitter = getattr(rule_module, "emitter", self.default_emitter)
             targets = emitter(output_file_path, data, column_names)
@@ -71,6 +85,21 @@ class App(object):
                 exporter.write()
                 logger.info("<write to target:%s over" % target_file)
             logger.info("<<<finish processing:%s" % file_path)
+
+    def phase_copy(self):
+        # ensure that output dirs exist
+        for d in self.output_dir:
+            if not os.path.exists(d):
+                os.makedirs(d)
+            if not os.path.isdir(d):
+                logger.fatal("output dir [%s] is not a dir" % d)
+                assert(False)
+
+        for src in os.listdir(self.tmp_dir):
+            src_file_path = os.path.join(self.tmp_dir, src)
+            for d in self.output_dir:
+                shutil.copy(src_file_path, d)
+
 
     def parse_table(self, file_path, rule_module):
         """
@@ -303,11 +332,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="python this_script")
     parser.add_argument("-i", help="input directory")
-    parser.add_argument("-o", help="output directory")
+    parser.add_argument("-o", nargs="*", help="output directory")
     parser.add_argument("-r", help="rule directory")
     parser.add_argument("-c", help="whether to use column comment", action="store_true")
     parser.add_argument("-v", help="whether to print trivial processing info", action="store_true")
     ns = parser.parse_args()
+    #print(ns)
     app = App(ns.i, ns.o, ns.r, ns.c, ns.v)
     app.run()
 
