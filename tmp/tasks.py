@@ -1,0 +1,666 @@
+
+# -*- encoding: utf-8 -*-
+
+columns = {'No': 0,
+ 'action_no': 22,
+ 'anim_no': 20,
+ 'award_bind_gold': 48,
+ 'award_exp': 46,
+ 'award_gold': 47,
+ 'award_yuanbao': 49,
+ 'conflict_task': 10,
+ 'day_num': 13,
+ 'expression_no': 25,
+ 'fail_space_no': 44,
+ 'fail_space_position': 45,
+ 'fail_task_dialog': 19,
+ 'fetch_npc_no': 21,
+ 'fetch_space_no': 40,
+ 'fetch_space_position': 41,
+ 'fetch_task_dialog': 17,
+ 'finish_npc_no': 23,
+ 'finish_space_no': 42,
+ 'finish_space_position': 43,
+ 'finish_task_dialog': 18,
+ 'kill_monsters_no': 38,
+ 'kill_monsters_num': 39,
+ 'monster_live_time': 37,
+ 'monster_no': 32,
+ 'monster_num': 34,
+ 'monster_pos': 35,
+ 'monster_type': 33,
+ 'moster_time': 36,
+ 'normal_stuffs_no': 27,
+ 'normal_stuffs_num': 28,
+ 'open_level': 7,
+ 'post_task': 12,
+ 'pre_task': 11,
+ 'scene_name': 2,
+ 'skip': 1,
+ 'special_stuff_no': 29,
+ 'special_stuff_num': 30,
+ 'special_stuff_ratio': 31,
+ 'target_npc_no': 24,
+ 'target_pos': 26,
+ 'task_chapter': 4,
+ 'task_desc_str': 16,
+ 'task_level': 9,
+ 'task_name': 3,
+ 'task_subtype': 6,
+ 'task_target_str': 15,
+ 'task_type': 5,
+ 'top_level': 8,
+ 'week_num': 14}
+index = {100001: 0,
+ 100002: 1,
+ 100003: 2,
+ 100004: 3,
+ 100005: 4,
+ 100006: 5,
+ 100007: 6,
+ 100008: 7,
+ 100009: 8,
+ 100010: 9,
+ 100011: 10}
+table = (
+	(
+		100001,#No:任务编号
+		0,#skip:SKIP
+		"""长安""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		1,#task_subtype:日常细分类型
+		1,#open_level:开启等级
+		None,#top_level:上限等级
+		1,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100002,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100001
+	(
+		100002,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		2,#task_subtype:日常细分类型
+		1,#open_level:开启等级
+		None,#top_level:上限等级
+		1,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100003,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		(
+			1,
+			1,
+			1,
+		),#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100002
+	(
+		100003,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		3,#task_subtype:日常细分类型
+		1,#open_level:开启等级
+		None,#top_level:上限等级
+		1,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100004,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100003
+	(
+		100004,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		4,#task_subtype:日常细分类型
+		1,#open_level:开启等级
+		None,#top_level:上限等级
+		1,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100005,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100004
+	(
+		100005,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		5,#task_subtype:日常细分类型
+		1,#open_level:开启等级
+		None,#top_level:上限等级
+		1,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100006,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100005
+	(
+		100006,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		6,#task_subtype:日常细分类型
+		2,#open_level:开启等级
+		None,#top_level:上限等级
+		2,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100007,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100006
+	(
+		100007,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		1,#task_chapter:任务章节
+		1,#task_type:任务类型
+		7,#task_subtype:日常细分类型
+		2,#open_level:开启等级
+		None,#top_level:上限等级
+		2,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		(
+			100008,
+		),#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100007
+	(
+		100008,#No:任务编号
+		0,#skip:SKIP
+		"""长安""",#scene_name:场景名称
+		"""主线xx""",#task_name:任务名称
+		2,#task_chapter:任务章节
+		1,#task_type:任务类型
+		1,#task_subtype:日常细分类型
+		10,#open_level:开启等级
+		None,#top_level:上限等级
+		10,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		None,#pre_task:前置任务
+		None,#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100008
+	(
+		100009,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""支线xx""",#task_name:任务名称
+		None,#task_chapter:任务章节
+		2,#task_type:任务类型
+		2,#task_subtype:日常细分类型
+		10,#open_level:开启等级
+		None,#top_level:上限等级
+		10,#task_level:任务等级
+		None,#conflict_task:互斥任务
+		(
+			100007,
+		),#pre_task:前置任务
+		None,#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		(
+			3,
+			3,
+			3,
+		),#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100009
+	(
+		100010,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""声望正义xx""",#task_name:任务名称
+		None,#task_chapter:任务章节
+		3,#task_type:任务类型
+		1,#task_subtype:日常细分类型
+		15,#open_level:开启等级
+		None,#top_level:上限等级
+		15,#task_level:任务等级
+		100011,#conflict_task:互斥任务
+		(
+			100007,
+		),#pre_task:前置任务
+		None,#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100010
+	(
+		100011,#No:任务编号
+		0,#skip:SKIP
+		"""长白山""",#scene_name:场景名称
+		"""声望邪恶xx""",#task_name:任务名称
+		None,#task_chapter:任务章节
+		3,#task_type:任务类型
+		1,#task_subtype:日常细分类型
+		15,#open_level:开启等级
+		None,#top_level:上限等级
+		15,#task_level:任务等级
+		100010,#conflict_task:互斥任务
+		(
+			100007,
+		),#pre_task:前置任务
+		None,#post_task:后续任务
+		None,#day_num:本日可接次数
+		None,#week_num:本周可接取次数
+		None,#task_target_str:任务目标
+		None,#task_desc_str:任务描述
+		None,#fetch_task_dialog:接任务对话
+		None,#finish_task_dialog:交任务对话
+		None,#fail_task_dialog:失败文案
+		None,#anim_no:脚本动画编号
+		None,#fetch_npc_no:接取NPC编号
+		None,#action_no:播放动作编号
+		None,#finish_npc_no:完成NPC编号
+		None,#target_npc_no:目标NPC编号
+		None,#expression_no:需要使用表情编号
+		None,#target_pos:需要到达坐标
+		None,#normal_stuffs_no:需要物品编号列表
+		None,#normal_stuffs_num:需要物品数量列表
+		None,#special_stuff_no:任务物品编号
+		None,#special_stuff_num:任务怪物数量
+		None,#special_stuff_ratio:任务物品几率
+		None,#monster_no:放出怪物编号
+		None,#monster_type:放出怪物类型
+		None,#monster_num:放出怪物数量
+		None,#monster_pos:放出怪物坐标
+		None,#moster_time:放出怪物时长
+		None,#monster_live_time:坚持不死时长
+		None,#kill_monsters_no:需要杀怪编号列表
+		None,#kill_monsters_num:需要杀怪数量列表
+		None,#fetch_space_no:领取任务跳转场景编号
+		None,#fetch_space_position:领取任务跳转坐标
+		None,#finish_space_no:完成任务跳转场景编号
+		None,#finish_space_position:完成任务跳转坐标
+		None,#fail_space_no:任务失败跳转场景编号
+		None,#fail_space_position:任务失败跳转坐标
+		None,#award_exp:经验奖励
+		None,#award_gold:金钱奖励
+		None,#award_bind_gold:绑定金奖励
+		None,#award_yuanbao:元宝奖励
+	),#100011
+)

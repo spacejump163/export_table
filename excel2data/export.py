@@ -38,8 +38,12 @@ class PyExporter(object):
         self.comment_level = 2
         self.comments = [0, 0]
         kidx = self.table.key_column
-        self.comments[0] = [str(r[kidx]) if type(r[kidx]) is not unicode else r[kidx].encode("u8") for r in self.table.matrix]
-        self.comments[1] = [c.program_name.encode("u8") for c in self.table.columns]
+        self.comments[0] = [
+            str(r[kidx]) if type(r[kidx]) is not unicode else r[kidx].encode("u8")
+            for r in self.table.matrix]
+        self.comments[1] = [
+            "%s:%s" % (c.program_name.encode("u8"), c.design_name.encode("u8"))
+            for c in self.table.columns]
 
     def write_columns(self):
         column_object = {}
@@ -95,11 +99,11 @@ class PyExporter(object):
         self.parts.append(indent)
         self.parts.append("(\n")
         for i, e in enumerate(l):
-            # comment first
             # dump element
             self.dump_element(e, clevel)
             self.parts.append(",")
             if level < self.comment_level:
+                # comment if any
                 self.parts.append("#%s" % self.comments[level][i])
             self.parts.append("\n")
         self.parts.append(indent)

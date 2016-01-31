@@ -1,2 +1,2 @@
-python run.py --input test_iunput --output test_output0 --rule rules --config config.py
+python run.py --input C:\work\svn-h42\common\tools\export_table\策划的xls放这里 --rule C:\work\svn-h42\common\tools\export_table\rules --config C:\work\svn-h42\common\tools\export_table\config.py --comment --output C:\work\svn-h42\common\tools\export_table\tmp_output
 pause

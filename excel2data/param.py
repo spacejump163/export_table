@@ -59,15 +59,11 @@ class Param(object):
         if type(s) is unicode:
             return s
         try:
+            return unicode(s, sys.getfilesystemencoding())
+        except UnicodeDecodeError:
+            pass
+        try:
             return unicode(s, "u8")
-        except UnicodeDecodeError:
-            pass
-        try:
-            return unicode(s, "gbk")
-        except UnicodeDecodeError:
-            pass
-        try:
-            return unicode(s, "u16")
         except UnicodeDecodeError:
             pass
         logger.fatal("FUCK, what kind of encoding are you using?")

@@ -2,10 +2,10 @@
 ++使用方法
 使用 python main.py来运行脚本
 +++参数说明
-* -i dir 指定输入目录，输入目录就是存excel的地方
-* -o dir 指定输出目录，所有的输出py文件都放在这里
-* -r dir 指定额外rule文件目录，如果需要使用原来的map功能则需要建立和源excel文件同basename的py文件，参考example
-* -c 是否在输出的数据文件里给每个加列加注释
+* --input dir 指定输入目录，输入目录就是存excel的地方
+* --output dir 指定输出目录，所有的输出py文件都放在这里
+* --rules dir 指定额外rule文件目录，如果需要使用原来的map功能则需要建立相应的py文件，参考
+* --comment 是否在输出的数据文件里给每个加列加注释
 * -v 是否输出更多的信息，用于调试定位错误
 +++使用范例
 参考test_input/example.py和rule/example.py

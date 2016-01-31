@@ -5,6 +5,7 @@ import os
 from collections import namedtuple
 import shutil
 import distutils.dir_util as dir_util
+import sys
 
 from excel2data.param import param
 from excel2data.table import Table
@@ -92,7 +93,8 @@ class App(object):
         abs_path = os.path.abspath(os.path.join(param.rule_dir, path))
         if abs_path not in self.rule_module_cache:
             d = {}
-            execfile(abs_path, {}, d)
+            safe_path = abs_path.encode(sys.getfilesystemencoding())
+            execfile(safe_path, {}, d)
             column_mapper = d.get("column_mapper", default_rule.column_mapper)
             row_mapper = d.get("row_mapper", default_rule.row_mapper)
             self.rule_module_cache[abs_path] = (column_mapper, row_mapper)
