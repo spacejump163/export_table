@@ -1,2 +1,2 @@
-python main.py -i test_input -r rules -c -o test_output0 test_output1
+python run.py --input test_iunput --output test_output0 --rule rules --config config.py
 pause

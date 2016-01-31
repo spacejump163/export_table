@@ -222,12 +222,12 @@ class App(object):
 
 class PyExporter(object):
     header_template = """# -*- coding: utf-8 -*-
-from wrapper import DataDescription
+from hexm.common.data.wrapper import data_description
 _reload_all = True
 
 """
 
-    tail_template = """\nata = DataDescription.DataDict(_Keys, _Data)
+    tail_template = """\ndata = data_description.DataDict(_Keys, _Data)
 """
 
     def __init__(self, output_file_path, data_dict, column_names, use_comment):
