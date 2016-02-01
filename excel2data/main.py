@@ -51,7 +51,7 @@ class App(object):
         if rule_file:
             mapper = self.get_rule_module(rule_file)
         else:
-            mapper = default_rule.column_mapper, default_rule.row_mapper
+            mapper = default_rule.column_mapper, default_rule.row_mapper, default_rule.matrix_mapper
         mapped_table = self.map_table(merged_table, mapper)
         self.write_table(target_module_name, mapped_table)
 
@@ -97,7 +97,8 @@ class App(object):
             execfile(safe_path, {}, d)
             column_mapper = d.get("column_mapper", default_rule.column_mapper)
             row_mapper = d.get("row_mapper", default_rule.row_mapper)
-            self.rule_module_cache[abs_path] = (column_mapper, row_mapper)
+            matrix_mapper = d.get("matrix_mapper", default_rule.matrix_mapper)
+            self.rule_module_cache[abs_path] = (column_mapper, row_mapper, matrix_mapper)
         return self.rule_module_cache[abs_path]
 
     def map_table(self, merged_table, mapper):
@@ -117,12 +118,18 @@ class App(object):
         mapped_table = Table()
         mapped_table.key_column = kidx
         mapped_table.columns = mapped_column
+        tmp_matrix = []
         for row in merged_table.matrix:
             input_row = input_type(*row)
             output_list = [None if i is None else row[i] for i in mapping]
             output_row = output_type(output_list)
-            mapper[1](output_row, input_row)
-            mapped_table.matrix.append(output_row.to_tuple())
+            preserve = mapper[1](output_row, input_row)
+            if preserve:
+                #mapped_table.matrix.append(output_row.to_tuple())
+                tmp_matrix.append(output_row)
+        mapper[2](tmp_matrix)
+        for row in tmp_matrix:
+            mapped_table.matrix.append(row.to_tuple())
         return mapped_table
 
     @staticmethod

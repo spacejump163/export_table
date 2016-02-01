@@ -5,4 +5,7 @@ def column_mapper(column_definitions):
     return key_index, column_definitions
 
 def row_mapper(output_row, input_row):
-    return output_row
+    return True
+
+def matrix_mapper(matrix):
+    pass
